@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "naumovs.color-highlight",
+    "irongeek.vscode-env",
+    "pkief.material-icon-theme",
+    "christian-kohler.path-intellisense",
+    "csstools.postcss",
+    "rvest.vs-code-prettier-eslint",
+    "gencer.html-slim-scss-css-class-completion",
+    "bradlc.vscode-tailwindcss",
+    "macieklad.tailwind-sass-syntax",
+    "bourhaouta.tailwindshades",
+    "wayou.vscode-todo-highlight",
+    "pmneo.tsimporter",
+    "amodio.tsl-problem-matcher"
+  ]
+}
