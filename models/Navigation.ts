@@ -1,12 +1,8 @@
 /** @format */
 
-export enum ModalTypes {
-  None,
+export enum PageRoutes {
+  Clock,
+  Tasks,
   Analytics,
   Account,
-}
-
-export enum BasicModalActions {
-  Open,
-  Close,
 }

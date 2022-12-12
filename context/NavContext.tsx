@@ -1,11 +1,15 @@
 /** @format */
 
 import { useContext, createContext, useState } from "react";
-import { ModalTypes, BasicModalActions } from "../models/Navigation";
+import { useRouter } from "next/router";
+import { PageRoutes } from "../models/Navigation";
 
 interface INavContext {
-  activeModal: ModalTypes;
-  handleAnalyticsModal: (action: BasicModalActions) => void;
+  activePage: PageRoutes;
+  handleNavigation: (
+    route: PageRoutes,
+    onClickElement: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 }
 
 const NavContext = createContext({} as INavContext);
@@ -15,26 +19,43 @@ interface INavContextProvider {
 }
 
 export const NavContextProvier = ({ children }: INavContextProvider) => {
-  const [activeModal, setActiveModal] = useState<ModalTypes>(ModalTypes.None);
+  const router = useRouter();
+  const [activePage, setActivePage] = useState<PageRoutes>(PageRoutes.Clock);
 
-  function handleAnalyticsModal(action: BasicModalActions) {
-    if (action === BasicModalActions.Open) {
-      setActiveModal(ModalTypes.Analytics);
-    } else if (action === BasicModalActions.Close) {
-      setActiveModal(ModalTypes.None);
+  function handleNavigation(
+    route: PageRoutes,
+    onClickElement: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    onClickElement.preventDefault();
+    setActivePage(route);
+    switch (route) {
+      case PageRoutes.Clock:
+        router.push("/");
+        break;
+      case PageRoutes.Tasks:
+        router.push("/tasks");
+        break;
+      case PageRoutes.Analytics:
+        router.push("/analytics");
+        break;
+      case PageRoutes.Account:
+        router.push("/account");
+        break;
+      default:
+        break;
     }
   }
 
-  function handleAccountModal() {
-    //
-  }
-
   const contextValue: INavContext = {
-    activeModal,
-    handleAnalyticsModal,
+    activePage,
+    handleNavigation,
   };
 
   return (
     <NavContext.Provider value={contextValue}>{children}</NavContext.Provider>
   );
+};
+
+export const useNavContext = () => {
+  return useContext(NavContext);
 };

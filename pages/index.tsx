@@ -3,8 +3,6 @@
 import Head from "next/head";
 
 import PageWrapper from "../components/layout/PageWrapper";
-import NavBar from "../components/layout/NavBar";
-import Clock from "../components/feature/clock/clock";
 
 export default function Home() {
   return (
@@ -16,8 +14,7 @@ export default function Home() {
       </Head>
 
       <PageWrapper>
-        <NavBar />
-        <Clock />
+        <h1>Clock</h1>
       </PageWrapper>
 
       <footer></footer>
