@@ -9,7 +9,16 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        "bg-circle-lg": "30rem",
+        "bg-circle": "15rem",
+      },
+      width: {
+        "bg-circle-lg": "30rem",
+        "bg-circle": "15rem",
+      },
+    },
   },
   plugins: [],
 };

@@ -2,6 +2,9 @@
 
 import { useContext, createContext, useState } from "react";
 import { useRouter } from "next/router";
+
+import { IWrapperProps } from "../models/general";
+
 import { PageRoutes } from "../models/Navigation";
 
 interface INavContext {
@@ -14,11 +17,7 @@ interface INavContext {
 
 const NavContext = createContext({} as INavContext);
 
-interface INavContextProvider {
-  children: React.ReactElement | React.ReactElement[];
-}
-
-export const NavContextProvier = ({ children }: INavContextProvider) => {
+export const NavContextProvier = ({ children }: IWrapperProps) => {
   const router = useRouter();
   const [activePage, setActivePage] = useState<PageRoutes>(PageRoutes.Clock);
 

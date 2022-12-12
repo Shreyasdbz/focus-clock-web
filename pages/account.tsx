@@ -1,14 +1,12 @@
 /** @format */
 
-import PageWrapper from "../components/layout/PageWrapper";
+import ProtectedPage from "../components/auth/ProtectedPage";
 
 const Account = () => {
   return (
-    <div>
-      <PageWrapper>
-        <h1>Account</h1>
-      </PageWrapper>
-    </div>
+    <ProtectedPage>
+      <h1>Account</h1>
+    </ProtectedPage>
   );
 };
 

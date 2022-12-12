@@ -6,7 +6,7 @@ import PageWrapper from "../components/layout/PageWrapper";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Focus Clock</title>
         <meta name="description" content="Clock to help you focus" />
@@ -18,6 +18,6 @@ export default function Home() {
       </PageWrapper>
 
       <footer></footer>
-    </div>
+    </>
   );
 }

@@ -1,13 +1,13 @@
 /** @format */
 
-import PageWrapper from "../components/layout/PageWrapper";
+import ProtectedPage from "../components/auth/ProtectedPage";
 
 const Analytics = () => {
   return (
     <div>
-      <PageWrapper>
+      <ProtectedPage>
         <h1>Analytics</h1>
-      </PageWrapper>
+      </ProtectedPage>
     </div>
   );
 };

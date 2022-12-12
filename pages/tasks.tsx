@@ -1,16 +1,12 @@
 /** @format */
 
-import PageWrapper from "../components/layout/PageWrapper";
+import ProtectedPage from "../components/auth/ProtectedPage";
 
 const Tasks = () => {
   return (
-    <div>
-      <div>
-        <PageWrapper>
-          <h1>Tasks</h1>
-        </PageWrapper>
-      </div>
-    </div>
+    <ProtectedPage>
+      <h1>Tasks</h1>
+    </ProtectedPage>
   );
 };
 

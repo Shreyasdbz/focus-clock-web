@@ -15,11 +15,25 @@ import {
 export const NavBar = () => {
   const { handleNavigation, activePage } = useNavContext();
 
+  function getSiteLogo() {
+    if (activePage === PageRoutes.Clock) {
+      return (
+        <span className="text-4xl font-extrabold font-outfit text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-violet-400">
+          focus clock
+        </span>
+      );
+    } else {
+      return (
+        <span className="text-4xl font-extrabold font-outfit">focus clock</span>
+      );
+    }
+  }
+
   function getNavIcon(route: PageRoutes) {
     const baseClasses =
-      "hover:stroke-white hover:bg-slate-500 rounded-lg h-8 w-8";
+      "h-10 w-10 hover:stroke-white hover:fill-black rounded-full ";
     const activeClasses =
-      "hover:stroke-white hover:bg-slate-500 rounded-lg h-8 w-8 fill-red-500";
+      "h-10 w-10 hover:fill-black rounded-full  stroke-white bg-gradient-to-br from-blue-600 to-violet-400 px-1 py-1";
 
     switch (route) {
       case PageRoutes.Tasks:
@@ -46,34 +60,36 @@ export const NavBar = () => {
   }
 
   return (
-    <div className="w-full flex flex-row items-start justify-between sticky top-0 px-2 mt-4">
-      <div className="h-full flex items-center justify-center">
-        <button
-          onClick={(e) => {
-            handleNavigation(PageRoutes.Clock, e);
-          }}>
-          Focus Clock
-        </button>
-      </div>
-      <div className="flex flex-row items-center justify-center gap-4">
-        <button
-          onClick={(e) => {
-            handleNavigation(PageRoutes.Tasks, e);
-          }}>
-          {getNavIcon(PageRoutes.Tasks)}
-        </button>
-        <button
-          onClick={(e) => {
-            handleNavigation(PageRoutes.Analytics, e);
-          }}>
-          {getNavIcon(PageRoutes.Analytics)}
-        </button>
-        <button
-          onClick={(e) => {
-            handleNavigation(PageRoutes.Account, e);
-          }}>
-          {getNavIcon(PageRoutes.Account)}
-        </button>
+    <div className="w-full flex flex-row items-center justify-center px-2 py-6 bg-white shadow-lg sticky top-0">
+      <div className="w-full flex flex-row items-center justify-between max-w-6xl">
+        <div className="flex items-center justify-center">
+          <button
+            onClick={(e) => {
+              handleNavigation(PageRoutes.Clock, e);
+            }}>
+            {getSiteLogo()}
+          </button>
+        </div>
+        <div className="flex flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
+          <button
+            onClick={(e) => {
+              handleNavigation(PageRoutes.Tasks, e);
+            }}>
+            {getNavIcon(PageRoutes.Tasks)}
+          </button>
+          <button
+            onClick={(e) => {
+              handleNavigation(PageRoutes.Analytics, e);
+            }}>
+            {getNavIcon(PageRoutes.Analytics)}
+          </button>
+          <button
+            onClick={(e) => {
+              handleNavigation(PageRoutes.Account, e);
+            }}>
+            {getNavIcon(PageRoutes.Account)}
+          </button>
+        </div>
       </div>
     </div>
   );
