@@ -3,7 +3,7 @@
 import { createContext, useState, useContext } from "react";
 
 import { IAppUser } from "../models/User";
-import { IWrapperProps } from "../models/general";
+import { IWrapperProps } from "../models/General";
 
 // TODO: Remove mock
 import { test_user_1a } from "../mock/User";

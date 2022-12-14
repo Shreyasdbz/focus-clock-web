@@ -1,6 +1,6 @@
 /** @format */
 
-import { IWrapperProps } from "../../models/general";
+import { IWrapperProps } from "../../models/General";
 
 import NavBar from "./NavBar";
 

@@ -3,7 +3,7 @@
 import { useContext, createContext, useState } from "react";
 import { useRouter } from "next/router";
 
-import { IWrapperProps } from "../models/general";
+import { IWrapperProps } from "../models/General";
 
 import { PageRoutes } from "../models/Navigation";
 

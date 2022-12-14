@@ -1,4 +1,4 @@
-import { IWrapperProps } from "../../models/general";
+import { IWrapperProps } from "../../models/General";
 
 import { useUserContext } from "../../context/UserContext";
 import PageWrapper from "../layout/PageWrapper";
