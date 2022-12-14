@@ -1,11 +1,12 @@
 /** @format */
 
 import ProtectedPage from "../components/auth/ProtectedPage";
+import PageTitle from "../components/common/PageTitle";
 
 const Account = () => {
   return (
     <ProtectedPage>
-      <h1>Account</h1>
+      <PageTitle text="Account" />
     </ProtectedPage>
   );
 };

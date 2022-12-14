@@ -18,20 +18,22 @@ export const NavBar = () => {
   function getSiteLogo() {
     if (activePage === PageRoutes.Clock) {
       return (
-        <span className="text-4xl font-extrabold font-outfit text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-violet-400">
+        <span className="text-4xl md:text-5xl font-extrabold font-outfit text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-violet-400">
           focus clock
         </span>
       );
     } else {
       return (
-        <span className="text-4xl font-extrabold font-outfit">focus clock</span>
+        <span className="text-4xl md:text-5xl font-extrabold font-outfit">
+          focus clock
+        </span>
       );
     }
   }
 
   function getNavIcon(route: PageRoutes) {
     const baseClasses =
-      "h-10 w-10 hover:stroke-white hover:fill-black rounded-full ";
+      "h-10 w-10 hover:stroke-white hover:fill-black rounded-full hover:border-2 border-slate-600";
     const activeClasses =
       "h-10 w-10 hover:fill-black rounded-full  stroke-white bg-gradient-to-br from-blue-600 to-violet-400 px-1 py-1";
 

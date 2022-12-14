@@ -18,6 +18,9 @@ module.exports = {
         "bg-circle-lg": "30rem",
         "bg-circle": "15rem",
       },
+      colors: {
+        "msft-brand": "#2f2f2f",
+      },
     },
   },
   plugins: [],

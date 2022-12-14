@@ -2,6 +2,7 @@ import { IWrapperProps } from "../../models/general";
 
 import { useUserContext } from "../../context/UserContext";
 import PageWrapper from "../layout/PageWrapper";
+import SignInMenu from "./SignInMenu";
 
 const ProtectedPage = ({ children }: IWrapperProps) => {
   const { userProfile } = useUserContext();
@@ -17,7 +18,7 @@ const ProtectedPage = ({ children }: IWrapperProps) => {
           <div>
             <span className="text-lg font-normal">You can sign in here:</span>
           </div>
-          <button>Sign In</button>
+          <SignInMenu />
         </div>
       </PageWrapper>
     );

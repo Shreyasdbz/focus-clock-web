@@ -3,6 +3,7 @@
 import Head from "next/head";
 
 import PageWrapper from "../components/layout/PageWrapper";
+import Clock from "../components/feature/clock/Clock";
 
 export default function Home() {
   return (
@@ -13,9 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <PageWrapper>
-        <h1>Clock</h1>
-      </PageWrapper>
+      <Clock />
 
       <footer></footer>
     </>

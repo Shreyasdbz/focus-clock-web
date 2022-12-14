@@ -1,12 +1,13 @@
 /** @format */
 
 import ProtectedPage from "../components/auth/ProtectedPage";
+import PageTitle from "../components/common/PageTitle";
 
 const Analytics = () => {
   return (
     <div>
       <ProtectedPage>
-        <h1>Analytics</h1>
+        <PageTitle text="Analytics" />
       </ProtectedPage>
     </div>
   );
