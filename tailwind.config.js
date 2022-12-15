@@ -11,10 +11,12 @@ module.exports = {
   theme: {
     extend: {
       height: {
+        128: "32rem",
         "bg-circle-lg": "30rem",
         "bg-circle": "15rem",
       },
       width: {
+        128: "32rem",
         "bg-circle-lg": "30rem",
         "bg-circle": "15rem",
       },

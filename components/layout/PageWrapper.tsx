@@ -2,15 +2,21 @@
 
 import { IWrapperProps } from "../../models/General";
 
+import { useUiContext } from "../../context/UiContext";
+
 import NavBar from "./NavBar";
 
-const PageWrapper = ({ children }: IWrapperProps) => {
+const PageWrapper = (props: IWrapperProps) => {
+  const { pageBlurActive } = useUiContext();
   return (
-    <main className="w-screen h-screen flex flex-col items-center justify-center overflow-x-hidden overflow-y-scroll relative">
+    <main
+      className={`w-screen h-screen flex flex-col items-center justify-center overflow-x-hidden overflow-y-scroll relative z-0 ${
+        pageBlurActive ? "blur-md" : "filter-none"
+      }`}>
       {/* <BackgroundShapes /> */}
       <NavBar />
       <div className="w-full h-full flex flex-col items-center justify-start relative max-w-6xl px-4 mt-8">
-        {children}
+        {props.children}
       </div>
     </main>
   );

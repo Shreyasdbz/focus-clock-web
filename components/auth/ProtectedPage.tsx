@@ -4,10 +4,10 @@ import { useUserContext } from "../../context/UserContext";
 import PageWrapper from "../layout/PageWrapper";
 import SignInMenu from "./SignInMenu";
 
-const ProtectedPage = ({ children }: IWrapperProps) => {
+const ProtectedPage = (props: IWrapperProps) => {
   const { userProfile } = useUserContext();
   if (userProfile) {
-    return <PageWrapper>{children}</PageWrapper>;
+    return <PageWrapper>{props.children}</PageWrapper>;
   } else {
     return (
       <PageWrapper>

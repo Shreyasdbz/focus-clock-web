@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import { PageRoutes } from "../../models/Navigation";
+import { PageRoutes } from "../../models/Ui";
 
-import { useNavContext } from "../../context/NavContext";
+import { useUiContext } from "../../context/UiContext";
 
 import {
   BookmarkSquareIcon,
@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export const NavBar = () => {
-  const { handleNavigation, activePage } = useNavContext();
+  const { handleNavigation, activePage } = useUiContext();
 
   function getSiteLogo() {
     if (activePage === PageRoutes.Clock) {

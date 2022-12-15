@@ -14,7 +14,7 @@ interface IUserContext {
 
 const UserContext = createContext({} as IUserContext);
 
-export const UserContextProvider = ({ children }: IWrapperProps) => {
+export const UserContextProvider = (props: IWrapperProps) => {
   // TODO: Remove mock
   const [userProfile, setUserProfile] = useState<IAppUser | null>(test_user_1a);
 
@@ -24,7 +24,7 @@ export const UserContextProvider = ({ children }: IWrapperProps) => {
 
   return (
     <UserContext.Provider value={contextValues}>
-      {children}
+      {props.children}
     </UserContext.Provider>
   );
 };
