@@ -62,7 +62,7 @@ export const NavBar = () => {
   }
 
   return (
-    <div className="w-full flex flex-row items-center justify-center px-2 py-6 bg-white shadow-lg sticky top-0">
+    <div className="w-full flex flex-row items-center justify-center px-2 py-6 bg-white shadow-lg sticky top-0 z-20">
       <div className="w-full flex flex-row items-center justify-between max-w-6xl">
         <div className="flex items-center justify-center">
           <button

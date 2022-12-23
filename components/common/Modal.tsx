@@ -1,7 +1,7 @@
 /** @format */
 
 import { useEffect } from "react";
-import { IWrapperProps } from "../../models/General";
+import { IWrapperProps } from "../../models/general";
 import { useUiContext } from "../../context/UiContext";
 
 const Modal = (props: IWrapperProps) => {
