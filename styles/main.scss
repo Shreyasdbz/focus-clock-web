@@ -102,3 +102,26 @@
     lighten;
   filter: blur(63px);
 }
+
+// ------------------- THEME GRADIENTS
+
+.bgThemeA {
+  background: #2a2a72;
+  background: linear-gradient(135deg, #009ffd 0%, #2a2a72 100%);
+  box-shadow: 0px 0px 15px 5px #2a2a7230;
+}
+.bgThemeB {
+  background: #5f0a87;
+  background: linear-gradient(135deg, #a4508b 0%, #5f0a87 100%);
+  box-shadow: 0px 0px 15px 5px #5f0a8730;
+}
+.bgThemeC {
+  background: #ff4e00;
+  background: linear-gradient(135deg, #ec9f05 0%, #ff4e00 100%);
+  box-shadow: 0px 0px 15px 5px #ff4e0030;
+}
+.bgThemeD {
+  background: #6b0f1a;
+  background: linear-gradient(135deg, #b91372 0%, #6b0f1a 100%);
+  box-shadow: 0px 0px 15px 5px #6b0f1a30;
+}

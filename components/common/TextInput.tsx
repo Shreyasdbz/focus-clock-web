@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import InputCaptionText from "./InputCaptionText";
 
 interface ITextInput {
   value: string;
@@ -9,6 +10,7 @@ interface ITextInput {
 const TextInput = (props: ITextInput) => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
+      <InputCaptionText text="TAG NAME" />
       <input
         type="text"
         value={props.value}

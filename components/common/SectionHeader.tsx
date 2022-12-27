@@ -15,7 +15,7 @@ const SectionHeader = (props: ISectionHeader) => {
       </span>
       {props.hasButton && (
         <button
-          className="rounded-lg px-2 py-1 bg-slate-300 border-2 border-slate-300 shadow-lg hover:border-slate-600 w-24"
+          className="rounded-lg px-2 py-1 bg-slate-300 border-2 border-slate-300 shadow-lg hover:border-slate-600 w-24 hover:bg-white"
           onClick={props.onButtonClick}>
           <div className="flex flex-row items-center justify-center gap-2">
             {props.buttonType === "ADD" && (
