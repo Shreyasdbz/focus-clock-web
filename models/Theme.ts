@@ -4,15 +4,12 @@ export interface IColorTheme {
   toGradColor: string;
 }
 
-export type IGradientThemeNames =
-  | "bgThemeA"
-  | "bgThemeB"
-  | "bgThemeC"
-  | "bgThemeD";
-
-export const gradientThemesList = [
-  "bgThemeA",
-  "bgThemeB",
-  "bgThemeC",
-  "bgThemeD",
-];
+export enum GradientThemes {
+  bgThemeA,
+  bgThemeB,
+  bgThemeC,
+  bgThemeD,
+  bgThemeE,
+  bgThemeF,
+  bgThemeG,
+}

@@ -1,10 +1,10 @@
-import { IGradientThemeNames } from "./Theme";
+import { GradientThemes } from "./Theme";
 import { TimerSizes } from "./Timer";
 
 export interface ITag {
   id: string;
   description: string;
-  themeId: IGradientThemeNames;
+  themeId: GradientThemes;
 }
 
 export interface ITask {

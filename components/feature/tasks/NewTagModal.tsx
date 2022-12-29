@@ -1,9 +1,11 @@
 import { ChangeEvent, useState, useEffect } from "react";
 
+import { GradientThemes } from "../../../models/Theme";
+import { useUiContext } from "../../../context/UiContext";
+import { useDataContext } from "../../../context/DataContext";
+
 import { getRandomTagName } from "../../../utils/randomGenerators";
 import { getInputTextError } from "../../../utils/inputValidation";
-import { useUiContext } from "../../../context/UiContext";
-import { IGradientThemeNames } from "../../../models/Theme";
 
 import Modal from "../../common/Modal";
 import ModalTitle from "../../common/ModalTitle";
@@ -16,6 +18,8 @@ import ThemePicker from "./ThemePicker";
 
 const NewTagModal = () => {
   const { dismissAllModals } = useUiContext();
+  const { themeSelection, setThemeSelection, clearAllTransactionalData } =
+    useDataContext();
 
   const [textValue, setTextValue] = useState<string>(getRandomTagName());
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -28,12 +32,13 @@ const NewTagModal = () => {
     setErrorMessage(getInputTextError(e.target.value));
   }
 
-  function handleThemeClick(themeId: IGradientThemeNames) {
-    //
+  function handleThemeClick(themeId: GradientThemes) {
+    setThemeSelection(themeId);
   }
 
   function handleCancel() {
     dismissAllModals();
+    clearAllTransactionalData();
   }
 
   function handleSubmit() {
@@ -50,7 +55,10 @@ const NewTagModal = () => {
         messageOnError={errorMessage}
         onSubmit={handleSubmit}
       />
-      <ThemePicker onClickHandler={handleThemeClick} />
+      <ThemePicker
+        selection={themeSelection}
+        onClickHandler={handleThemeClick}
+      />
       <ButtonsWrapper>
         <CancelButton onClickHandler={handleCancel} />
         <ButtonsDivider></ButtonsDivider>

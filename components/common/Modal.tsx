@@ -30,7 +30,7 @@ const Modal = (props: IWrapperProps) => {
         dismissAllModals();
       }}>
       <div
-        className="bg-white px-8 py-14 mt-20 rounded-md shadow-md w-80 md:w-96 lg:w-128"
+        className="bg-white px-8 py-14 mt-20 rounded-md shadow-md w-80 md:w-96 lg:w-128 overflow-hidden"
         onClick={(e) => e.stopPropagation()}>
         {props.children}
       </div>

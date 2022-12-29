@@ -1,27 +1,27 @@
-import { useDataContext } from "../../../context/DataContext";
+import { GradientThemes } from "../../../models/Theme";
 
-import { IGradientThemeNames } from "../../../models/Theme";
-import { gradientThemesList } from "../../../models/Theme";
+import { convertThemeCssToEnum } from "../../../utils/themeUtils";
 
 import InputCaptionText from "../../common/InputCaptionText";
 
 interface IThemePicker {
-  onClickHandler: (themeId: IGradientThemeNames) => void;
+  selection: GradientThemes | null;
+  onClickHandler: (themeId: GradientThemes) => void;
 }
 const ThemePicker = (props: IThemePicker) => {
-  const { themeSelection } = useDataContext();
+  const themeKeys = Object.keys(GradientThemes).filter((t) => isNaN(Number(t)));
+
   return (
-    <div className="flex flex-col w-full items-center justify-center">
+    <div className="w-full flex flex-col items-center justify-center">
       <InputCaptionText text="TAG THEME" />
-      <div className="flex flex-row items-center justify-start mb-8 gap-4">
-        {gradientThemesList.map((t) => {
-          // compare if matches
-          let isSelected = t === themeSelection;
+      <div className="w-full flex flex-row items-center justify-start mb-8 gap-4 border-2 overflow-x-scroll">
+        {themeKeys.map((t) => {
+          let isSelected = t === String(props.selection);
           return (
             <button
-              key={t.indexOf(t)}
+              key={themeKeys.indexOf(t)}
               onClick={() => {
-                // props.onClickHandler(t)
+                props.onClickHandler(convertThemeCssToEnum(t));
               }}
               className={`w-14 h-14 rounded-full ${t} ${
                 isSelected ? "border-4 border-white" : ""
